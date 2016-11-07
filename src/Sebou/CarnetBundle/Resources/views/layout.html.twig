@@ -1,0 +1,13 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}
+  {{ parent() }}
+{% endblock %}
+{% block lien %}
+  {{ parent() }}
+{% endblock %}
+{% block body %}
+    {{ parent() }}
+  {% block deco %}
+  {% endblock %}
+{% endblock %}

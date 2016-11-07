@@ -1,0 +1,20 @@
+{% extends "SebouCarnetBundle::layout.html.twig" %}
+
+{% block title %}
+  {{ parent() }}
+{% endblock %}
+{% block lien %}
+  {{ parent() }}
+{% endblock %}
+{% block body %}
+  {{ parent()}}
+{% endblock %}
+{% block deco %}
+<div>
+<ul>
+{% for contact in listContact %}
+  <li>{{ contact.nom }}  <a href="{{ path('detail',{'id':contact.id}) }}">Detail</a> <a href="{{ path('edit',{'id':contact.id}) }}">Modifier</a>  <a href="{{ path('supp',{'id':contact.id}) }}">Supprimer</a> </li>
+{% endfor %}
+</ul>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+
+accueil:
+    path:     /accueil
+    defaults: { _controller: SebouCarnetBundle:Contact:accueil }
+
+add:
+  path:       /add
+  defaults: { _controller: SebouCarnetBundle:Contact:add }
+
+view:
+  path:       /view
+  defaults: { _controller: SebouCarnetBundle:Contact:view}
+
+detail:
+  path:       /detail/{id}
+  defaults: { _controller: SebouCarnetBundle:Contact:detail}
+  requirements:
+    id: \d+
+
+edit:
+  path:       /edit/{id}
+  defaults: { _controller: SebouCarnetBundle:Contact:edit}
+  requirements:
+    id: \d+
+
+supp:
+  path:       /supp/{id}
+  defaults: { _controller: SebouCarnetBundle:Contact:supp}
+  requirements:
+    id: \d+

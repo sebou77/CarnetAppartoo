@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}Appartoo Accueil{% endblock %}</title>
+  </head>
+  <body>
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+    Connecté en tant que {{ app.user.username }}
+    -
+    <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+{% else %}
+    <a href="{{ path('fos_user_security_login') }}">Connexion</a>
+    <a href="{{ path('fos_user_registration_register') }}">Inscription</a>
+{% endif %}
+
+    {% block lien %}
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+      <br/>
+      <a href="{{ path('view') }}">Voir ses contacts</a>
+      <a href="{{ path('add') }}">Ajouter un contact</a>
+    {% endif %}
+    {% endblock %}
+
+    {% block body %}
+    <h1>Carnet D'adresse </h1>
+
+    <p>
+      Bienvenue sur votre carnet d'adresse
+    </p>
+    {% endblock %}
+  </body>
+</html>

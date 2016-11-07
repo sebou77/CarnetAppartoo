@@ -1,0 +1,20 @@
+{% extends "SebouCarnetBundle::layout.html.twig" %}
+
+{% block title %}
+  {{ parent() }}
+{% endblock %}
+{% block body %}
+  {{ parent()}}
+{% endblock %}
+{% block deco %}
+<div>
+<ul>
+<li> nom : {{ contact.nom }}</li>
+<li> prenom : {{ contact.prenom }}</li>
+<li> email : {{ contact.email }}</li>
+<li> adresse : {{ contact.adresse }}</li>
+<li> telephone : {{ contact.telephone }}</li>
+<li> siteweb : {{ contact.siteWeb }}</li>
+</ul>
+</div>
+{% endblock %}
